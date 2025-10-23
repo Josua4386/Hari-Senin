@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BERANDA</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 60px;
+        }
+        
+
+        .navbar nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .kategori {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .profile-icon img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit:cover;
+         }
+        .hero-section {
+            padding: 50px 120px 80px;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-image-overlay {    
+            background-image: url(2a1927131315b81c34554c670a24b7f75eb0cb42.jpg);
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            padding: 100px 80px;
+        }
+        .hero-image-overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            border-radius: 15px;
+        }
+
+        .hero-text-container {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            color: #ffffff;
+            padding: 0;
+        }
+
+        .hero-image-overlay h1 {
+            font-size: 44px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-image-overlay p {
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #38a169; 
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 15px 30px;
+            border-radius: 50px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #2c7a52;
+        }
+
+        .featured-videos {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 120px 0; 
+        }
+
+        .featured-videos h2 {
+            font-size: 30px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .featured-videos .subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .class-categories {
+            display: flex;
+            gap: 25px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+        }
+
+        .category-link {
+            font-size: 16px;
+            font-weight: 500;
+            color: #666;
+            padding: 5px 0;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .category-link.active {
+            color: #ff5722;
+            font-weight: 600;
+        }
+
+        .category-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #ff5722;
+            border-radius: 2px;
+        }
+        .course-grid {
+            padding: 0 120px 0px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .course-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+
+        }
+
+        .course-card:hover {
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-card img {
+            width: 100%;
+            height: 200px;
+
+        }
+        
+        .newsletter-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 0px;
+            background-image: url('BG2.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .newsletter-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4); 
+            z-index: 1;
+        }
+
+        .newsletter-text {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .newsletter-text .label {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+            opacity: 0.8;
+        }
+
+        .newsletter-text h4 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-text p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .subscribe-form {
+            display: flex;
+            justify-content: center;
+            max-width: 450px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .subscribe-form input[type="email"] {
+            flex-grow: 1;
+            padding: 12px 15px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .subscribe-form button {
+            background-color: #ff5722; 
+            color: #ffffff;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .subscribe-form button:hover {
+            background-color: #e04e1d;
+        }
+        footer {
+            background-color: #ffffff;
+            padding: 50px 0 20px;
+        }
+
+        .footer-main {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 120px;
+        }
+
+        .footer-logo-col {
+            max-width: 300px;
+        }
+
+        .footer-logo-col .logo {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo-col p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .footer-links-col {
+            display: flex;
+            gap: 80px;
+        };
+
+        .footer-links-col a:hover {
+            color: #ff5722;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding: 20px 120px 0;
+            border-top: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <img src="logo.png" alt="Logo" class ="header-logo" width="200px" height="50px">
+        <nav>
+            <p class="kategori">Kategori</p>
+            <div class="profile-icon">
+                <img src="pp.png" alt="Profile" aria-label="Profil Pengguna">
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-image-overlay">
+                    <div class="hero-text-container">
+                        <h1>Revolusi Pembelajaran: Temukan Ilmu Baru melalui Platform Video Interaktif!</h1>
+                        <p>Temukan ilmu baru yang menarik dan mendalam melalui koleksi video pembelajaran berkualitas tinggi. Tidak hanya itu, Anda juga dapat berpartisipasi dalam latihan interaktif yang akan meningkatkan pemahaman Anda.</p>
+                        <P class="cta-button">Temukan Video Course untuk Dipelajari</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="featured-videos">
+            <h2>Koleksi Video Pembelajaran Unggulan</h2>
+            <p class="subtitle">Jelajahi Dunia Pengetahuan Melalui Pilihan Kami!</p>
+
+            <div class="class-categories">
+                <p class="category-link active">Semua Kelas</p>
+                <p class="category-link">Pemasaran</p>
+                <p class="category-link">Desain</p>
+                <p class="category-link">Pengembangan Diri</p>
+                <p class="category-link">Bisnis</p>
+            </div>
+        </section>
+
+        <section class="course-grid">
+            
+            <div class="course-card">
+                <img src="1.png" alt="1" style="height: fit-content;">
+            </div>
+            
+            <div class="course-card">
+                <img src="2.png" alt="1" style="height: fit-content;">
+            </div>
+            <div class="course-card">
+                <img src="3.png" alt="1" style="height: fit-content;">
+            </div>
+            <div class="course-card">
+                <img src="4.png" alt="1" style="height: fit-content;">
+            </div>
+            
+            <div class="course-card">
+                <img src="5.png" alt="1" style="height: fit-content;">
+            </div>
+            
+            <div class="course-card">
+                <img src="6.png" alt="1" style="height: fit-content;">
+            </div>
+            
+        </section>
+
+        <section class="hero-section">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <div class="label">NEWSLETTER</div>
+                    <h4>Mau Belajar Lebih Banyak?</h4>
+                    <p>Daftarkan dirimu untuk mendapatkan informasi terbaru dan penawaran spesial dari program-program terbaik hariesok.id</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Masukkan Emailmu" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-main">
+            <div class="footer-logo-col">
+                <div class="logo">videobelajar</div>
+                <p>Gali Potensi Anda Melalui Pembelajaran Video di hariesok.id!</p>
+                <p>Jl. Usman Effendi No. 50 Lowokwaru, Malang</p>
+                <p>+62-877-7123-1234</p>
+            </div>
+            
+            <div class="footer-links-col">
+                <div>
+                    <h5>Kategori</h5>
+                    <p>Digital & Teknologi</p>
+                    <p>Pemasaran</p>
+                    <p>Manajemen Bisnis</p>
+                    <p>Pengembangan Diri</p>
+                    <p>Desain</p>
+                </div>
+                <div>
+                    <h5>Perusahaan</h5>
+                    <p>Tentang Kami</p>
+                    <p>FAQ</p>
+                    <p>Kebijakan Privasi</p>
+                    <p>Ketentuan Layanan</p>
+                    <p>Bantuan</p>
+                </div>
+                <div>
+                    <h5>Komunitas</h5>
+                    <p>Tips Sukses</p>
+                    <p>Blog</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy;2023 Gerobak Sayur All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
